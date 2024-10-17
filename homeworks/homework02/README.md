@@ -52,8 +52,32 @@ sequence.gb<br>
 slides<br>
 vader.txt<br>
 
-_Paste your SCRIPT here (not the output)_
+#Define new file
+Q1_file="question01.txt"
 
+#Define directory 
+lecture_dir=/Users/eijahscott/Documents/GitHub/MCB-536/tfcb_2023-main/lectures/lecture04
+
+#Define directory content
+lecture_contents=$(ls "$lecture_dir")
+
+#Define username and home directory
+sername=$(whoami)
+home_dir=$HOME
+
+#Output
+echo "My username is $username" > "$Q1_file"
+echo "My home directory is $home_dir" >> "$Q1_file"
+echo "The contents of the tfcb_2023/lectures/lecture04/ directory are $lecture_contents" >> "$Q1_file"
+
+#Make new directory 
+mkdir -p homework02
+
+#Move file
+mv "$Q1_file" homework02/
+
+#Print the content
+cat homework02/question01.txt
 
 ## Problem 2
 
@@ -75,6 +99,7 @@ tfcb_2023/homeworks/homework02/list.txt
 
 You can make the contents of those files whatever you want (hint: slide 9... )
 
-_Paste your SCRIPT here (not the output)_
+mkdir -p homework02/question02
 
-
+for num in 504 569 231 717 986 528 759 654 751 262 889 281 186 108 388 374 148 716 637 550 382 797 477 202 699; do touch "homework02/question02/file${num}.txt"
+done
